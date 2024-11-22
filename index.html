@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Italian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #3498db;
+        }
+        .exercise input, .exercise textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .exercise button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn Italian: Beginner to A2</h1>
+    </header>
+    <nav>
+        <a href="#lessons">Lessons</a>
+        <a href="#practice">Practice</a>
+        <a href="#diary">Diary</a>
+    </nav>
+    <section id="lessons">
+        <h2>Lessons</h2>
+        <p><strong>Greetings:</strong> Learn to say "Hello" and "Goodbye" in Italian.</p>
+        <ul>
+            <li><strong>Hello:</strong> Ciao</li>
+            <li><strong>Goodbye:</strong> Arrivederci</li>
+        </ul>
+        <p><strong>Numbers:</strong> Learn numbers from 1 to 10.</p>
+        <ul>
+            <li>1: Uno</li>
+            <li>2: Due</li>
+            <li>3: Tre</li>
+            <li>... up to 10</li>
+        </ul>
+    </section>
+    <section id="practice">
+        <h2>Practice</h2>
+        <div class="exercise">
+            <p>Translate "Hello" into Italian:</p>
+            <input type="text" id="answer1" placeholder="Your answer here">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="feedback1"></p>
+        </div>
+        <script>
+            function checkAnswer() {
+                const answer = document.getElementById("answer1").value.toLowerCase();
+                const feedback = document.getElementById("feedback1");
+                if (answer === "ciao") {
+                    feedback.textContent = "Correct! 'Hello' in Italian is 'Ciao'.";
+                    feedback.style.color = "green";
+                } else {
+                    feedback.textContent = "Try again! The correct answer is 'Ciao'.";
+                    feedback.style.color = "red";
+                }
+            }
+        </script>
+    </section>
+    <section id="diary">
+        <h2>Diary</h2>
+        <p>Write a short update in Italian:</p>
+        <textarea id="diaryEntry" placeholder="Scrivi qui..."></textarea>
+        <button onclick="submitDiary()">Submit</button>
+        <p id="diaryFeedback"></p>
+        <script>
+            function submitDiary() {
+                const entry = document.getElementById("diaryEntry").value;
+                const feedback = document.getElementById("diaryFeedback");
+                if (entry.toLowerCase().includes("io sono buono")) {
+                    feedback.innerHTML = "Correction: Use 'io sto bene' instead of 'io sono buono'.<br><strong>Explanation:</strong> 'Sto bene' is used to express well-being.";
+                    feedback.style.color = "blue";
+                } else {
+                    feedback.textContent = "Your diary entry looks great!";
+                    feedback.style.color = "green";
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>
